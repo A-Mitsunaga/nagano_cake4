@@ -10,7 +10,11 @@ Rails.application.routes.draw do
  resources :genres, only: [:index, :create, :edit, :uodate]
  post '/items/new' => 'items#create'
  post '/genres/new' => 'genres#create'
-
 end
+
+namespace :customers do
+resources :item, only: [:index, :show]
+end
+
   devise_for :customers
 end
